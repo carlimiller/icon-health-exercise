@@ -1,0 +1,48 @@
+# Bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# SQLite database file
+data/icon_health.db
+
+# dbt run artifacts
+target/
+dbt_packages/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Python distribution files
+*.egg
+*.eggs
+
+# Logs
+*.log
+*dbt.log
+
+# Dependency directories
+*.env
+
+# Configuration files
+*.bak
+*.swp
+*.swo

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: mapped__referrals
+    description: "Raw referral data from landing_zone."
+    columns:
+      - name: model_name
+        tests:
+          - not_null
+      - name: patient_id
+        description: "Unique identifier for the patient being referred."
+        tests:
+          - not_null
+      - name: procedure_code
+        description: "Procedure needed for the patient."
+      - name: patient_zip_code
+        description: "Zip code where the patient resides."
+      - name: employer_id
+        description: "Employer ID associated with the patient."
+      - name: updated_at
+        description: "The is the date the data was ingested."
+        tests:
+          - not_null
+      - name: create_date
+        description: "The is the date the model was run/refreshed."
+        tests:
+          - not_null

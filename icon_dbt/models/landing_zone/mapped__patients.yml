@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: mapped__patients
+    description: "Raw patient data from landing_zone."
+    columns:
+      - name: model_name
+        tests:
+          - not_null
+      - name: patient_id
+        description: "Unique patient identifier."
+        tests:
+          - unique
+          - not_null
+      - name: gender
+        description: "Patient's gender."
+      - name: birth_date
+        description: "Patient's birth date."
+        tests:
+          - not_null
+          - check_birth_date_range: {min_year: 1900, max_year: 2025}
+      - name: updated_at
+        description: "The is the date the data was ingested."
+        tests:
+          - not_null
+      - name: create_date
+        description: "The is the date the model was run/refreshed."
+        tests:
+          - not_null

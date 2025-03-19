@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: mapped__providers
+    description: "Raw provider data from landing_zone."
+    columns:
+      - name: model_name
+        tests:
+          - not_null
+      - name: provider_npi
+        description: "Unique National Provider Identifier."
+        tests:
+          - unique
+          - not_null
+      - name: provider_name
+        description: "Provider's full name."
+      - name: provider_zip_code
+        description: "Provider's zip code."
+        tests:
+          - not_null
+      - name: updated_at
+        description: "The is the date the data was ingested."
+        tests:
+          - not_null
+      - name: create_date
+        description: "The is the date the model was run/refreshed."
+        tests:
+          - not_null

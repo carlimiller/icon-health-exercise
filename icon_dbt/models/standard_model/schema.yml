@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: dbt_std__adverse_events
+    description: "This unions mapped adverse events models across different data sources (only one for now), parses columns, and applies transformations."
+    columns:
+      - name: model_name
+      - name: encounter_id
+      - name: updated_at
+      - name: create_date
+  - name: dbt_std__employer_in_network
+    description: "This unions mapped employer in-network models across different data sources (only one for now), parses columns, and applies transformations."
+    columns:
+      - name: model_name
+      - name: employer_id
+      - name: npi
+      - name: updated_at
+      - name: create_date
+  - name: dbr_std__encounters
+    description: "This unions mapped encounters models across different data sources (only one for now), parses columns, and applies transformations."
+    columns:
+      - name: model_name
+      - name: encounter_id
+      - name: provider_npi
+      - name: patient_id
+      - name: procedure_code
+      - name: paid_amount
+      - name: updated_at
+      - name: create_date
+  - name: dbt_std__patients
+    description: "This unions mapped patients models across different data sources (only one for now), parses columns, and applies transformations."
+    columns:
+      - name: model_name
+      - name: patient_id
+      - name: gender
+      - name: birth_date
+      - name: age
+      - name: age_bracket
+      - name: updated_at
+      - name: create_date
+  - name: dbt_std__providers
+    description: "This unions mapped providers models across different data sources (only one for now), parses columns, and applies transformations."
+    columns:
+      - name: model_name
+      - name: provider_npi
+      - name: provider_name
+      - name: provider_zip_code
+      - name: provider_zip_code
+      - name: provider_zip_code_trunc
+      - name: updated_at
+      - name: create_date
+  - name: std_dbt__referrals
+    description: "This unions mapped referrals models across different data sources (only one for now), parses columns, and applies transformations."
+    columns:
+      - name: model_name
+      - name: patient_id
+      - name: gender
+      - name: birth_date
+      - name: age
+      - name: age_bracket
+      - name: procedure_code
+      - name: patient_zip_code
+      - name: patient_zip_code_trunc
+      - name: employer_id
+      - name: updated_at
+      - name: create_date

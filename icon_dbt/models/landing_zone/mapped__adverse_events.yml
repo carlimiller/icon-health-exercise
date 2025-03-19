@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: mapped__adverse_events
+    description: "Encounters where an adverse event occurred."
+    columns:
+      - name: model_name
+        tests:
+          - not_null
+      - name: encounter_id
+        description: "Unique identifier for the encounter with an adverse event."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('encounters')
+              field: encounter_id
+      - name: updated_at
+        description: "The is the date the data was ingested."
+        tests:
+          - not_null
+      - name: create_date
+        description: "The is the date the model was run/refreshed."
+        tests:
+          - not_null

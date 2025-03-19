@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: icon_health
+    description: "All of the SQLite db tables comprised of ingested Icon Health data provided for this exercise."
+    schema: main
+    tables:
+      - name: patients
+      - name: providers
+      - name: encounters
+      - name: referrals
+      - name: adverse_events
+      - name: employer_network_unpivot

@@ -1,0 +1,14 @@
+version: 2
+
+seeds:
+  - name: cpt_codes
+    config:
+      column_types:
+        CPT_CODE: VARCHAR
+        CPT_DESCRIPTION: VARCHAR
+    
+    columns:
+    - name: CPT_CODE
+      description: CPT code for specific procedure.
+    - name: CPT_DESCRIPTION
+      description: Name of CPT code procedure.

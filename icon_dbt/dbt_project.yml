@@ -1,0 +1,35 @@
+name: 'icon_dbt'
+version: '1.0'
+profile: 'icon_dbt_profile'
+config-version: 2
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
+log-path: "../data/logs"
+
+models:
+  icon_dbt:
+    landing_zone:
+      +materialized: table
+    standard_model:
+      +materialized: table
+    enterprise_datasets:
+      +materialized: table
+    feature_store:
+      +materialized: table
+
+seeds:
+  icon_dbt:
+    cpt_codes:
+      schema: main
+    contracted_employers:
+      schema: main

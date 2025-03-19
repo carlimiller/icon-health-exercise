@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: mapped__encounters
+    description: "Raw encounter data from landing_zone."
+    columns:
+      - name: model_name
+        tests:
+          - not_null
+      - name: encounter_id
+        description: "Unique identifier for an encounter."
+        tests:
+          - unique
+          - not_null
+      - name: provider_npi
+        description: "NPI of the provider who handled the encounter."
+        tests:
+          - not_null
+      - name: patient_id
+        description: "ID of the patient who had the encounter."
+        tests:
+          - not_null
+      - name: procedure_code
+        description: "CPT code representing the procedure performed."
+      - name: paid_amount
+        description: "Amount paid for the encounter."
+        tests:
+          - not_null
+          - positive_values
+      - name: updated_at
+        description: "The is the date the data was ingested."
+        tests:
+          - not_null
+      - name: create_date
+        description: "The is the date the model was run/refreshed."
+        tests:
+          - not_null

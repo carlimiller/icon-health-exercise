@@ -1,0 +1,14 @@
+version: 2
+
+seeds:
+  - name: contracted_employers
+    config:
+      column_types:
+        EMPLOYER_ID: VARCHAR
+        EMPLOYER_NAME: VARCHAR
+    
+    columns:
+    - name: EMPLOYER_ID
+      description: Unique ID for contracted employer.
+    - name: EMPLOYER_NAME
+      description: Name of employer contracted with Icon Health.
